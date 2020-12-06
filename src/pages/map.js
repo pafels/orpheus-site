@@ -2,11 +2,11 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
+const MapPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
+    <SEO title="Карта" />
+    <h1>Карта</h1>
   </Layout>
 )
 
-export default IndexPage
+export default MapPage
