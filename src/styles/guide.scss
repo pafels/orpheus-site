@@ -1,0 +1,25 @@
+.guide {
+  figure.gatsby-resp-image-figure, span.gatsby-resp-image-wrapper {
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    figcaption {
+      margin-top: 0.5em;
+      text-align: center;
+      font-style: italic;
+    }
+  }
+
+  h1, h2, h3 {
+    margin-top: 1em;
+  }
+
+  table {
+    margin-bottom: 1em;
+
+    th, td {
+      border: 1px solid;
+      padding: 0.5em 0.5em;
+    }
+  }
+}
