@@ -17,8 +17,6 @@ const GuidePage = () => {
     }
   `)
 
-  console.log(query.allMarkdownRemark.nodes[0].tableOfContents)
-
   return (
     <Layout>
       <SEO title="Ръководство" />
