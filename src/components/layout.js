@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className="d-flex flex-column" style={{ "min-height": "100vh" }}>
+    <div className="d-flex flex-column" style={{ minHeight: "100vh" }}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <main>
         <div className="container">{children}</div>
