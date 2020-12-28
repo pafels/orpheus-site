@@ -6,13 +6,9 @@ import SEO from "../components/seo"
 const GuidePage = () => {
   const query = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(
-        filter: { frontmatter: { title: { eq: "mtb-markirovka" } } }
-      ) {
-        nodes {
-          html
-          tableOfContents(absolute: false, pathToSlugField: "id")
-        }
+      markdownRemark(frontmatter: { title: { eq: "mtb-markirovka" } }) {
+        html
+        tableOfContents(absolute: false, pathToSlugField: "id")
       }
     }
   `)
@@ -23,13 +19,13 @@ const GuidePage = () => {
       <h1>Ръководство за маркиране на маршрути за планинско колоездене</h1>
       <div
         dangerouslySetInnerHTML={{
-          __html: query.allMarkdownRemark.nodes[0].tableOfContents,
+          __html: query.markdownRemark.tableOfContents,
         }}
       />
       <div
         className="guide"
         dangerouslySetInnerHTML={{
-          __html: query.allMarkdownRemark.nodes[0].html,
+          __html: query.markdownRemark.html,
         }}
       />
     </Layout>
