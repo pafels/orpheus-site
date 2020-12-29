@@ -9,6 +9,7 @@ const Header = ({ siteTitle }) => (
         <HeaderLink title="Начало" to="/" />
         <HeaderLink title="Ръководство" to="/guide" />
         <HeaderLink title="Екип" to="/team" />
+        <HeaderLink title="Организации" to="/clubs" />
         <HeaderLink title="Карта" to="/map" />
       </ul>
     </nav>
