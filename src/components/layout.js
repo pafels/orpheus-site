@@ -29,8 +29,8 @@ const Layout = ({ tableOfContents, children }) => {
         <main>
           <div className="container">
             <div className="row">
-              <div className="col-8">{children}</div>
-              <div className="col-4 d-none d-sm-none d-md-none d-lg-block">
+              <div className="col-lg-8">{children}</div>
+              <div className="col-lg-4 d-none d-sm-none d-md-none d-lg-block">
                 <div className="sticky-top toc">
                   <TableOfContents tableOfContents={tableOfContents} />
                 </div>
