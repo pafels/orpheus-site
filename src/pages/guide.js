@@ -9,12 +9,13 @@ const GuidePage = () => {
     query {
       mdx(frontmatter: { title: { eq: "mtb-markirovka" } }) {
         body
+        tableOfContents(maxDepth: 2)
       }
     }
   `)
 
   return (
-    <Layout>
+    <Layout toc={query.mdx.tableOfContents.items}>
       <SEO title="Ръководство" />
       <h1>Ръководство за маркиране на маршрути за планинско колоездене</h1>
       <div className="guide">
