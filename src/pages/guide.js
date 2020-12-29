@@ -1,4 +1,5 @@
 import { useStaticQuery } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -6,9 +7,8 @@ import SEO from "../components/seo"
 const GuidePage = () => {
   const query = useStaticQuery(graphql`
     query {
-      markdownRemark(frontmatter: { title: { eq: "mtb-markirovka" } }) {
-        html
-        tableOfContents(absolute: false, pathToSlugField: "id")
+      mdx(frontmatter: { title: { eq: "mtb-markirovka" } }) {
+        body
       }
     }
   `)
@@ -17,17 +17,9 @@ const GuidePage = () => {
     <Layout>
       <SEO title="Ръководство" />
       <h1>Ръководство за маркиране на маршрути за планинско колоездене</h1>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: query.markdownRemark.tableOfContents,
-        }}
-      />
-      <div
-        className="guide"
-        dangerouslySetInnerHTML={{
-          __html: query.markdownRemark.html,
-        }}
-      />
+      <div className="guide">
+        <MDXRenderer>{query.mdx.body}</MDXRenderer>
+      </div>
     </Layout>
   )
 }

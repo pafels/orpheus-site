@@ -31,7 +31,6 @@ module.exports = {
             options: {
               maxWidth: 600,
               showCaptions: true,
-              markdownCaptions: true,
             },
           },
         ],
@@ -40,5 +39,21 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-catch-links`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 600,
+              showCaptions: true,
+            },
+          },
+          `gatsby-remark-autolink-headers`,
+        ],
+      },
+    },
   ],
 }
