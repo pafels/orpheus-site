@@ -7,7 +7,8 @@ const Header = ({ siteTitle }) => (
     <nav className="navbar navbar-expand navbar-light bg-light">
       <ul className="navbar-nav">
         <HeaderLink title="Начало" to="/" />
-        <HeaderLink title="Ръководство" to="/guide" />
+        <HeaderLink title="Правилник" to="/guide" />
+        <HeaderLink title="Полезни съвети" to="/advices" />
         <HeaderLink title="Екип" to="/team" />
         <HeaderLink title="Организации" to="/clubs" />
         <HeaderLink title="Карта" to="/map" />
