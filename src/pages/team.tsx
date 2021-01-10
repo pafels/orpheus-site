@@ -44,7 +44,7 @@ export default function TeamPage() {
       <div className="card-deck">
         <div className="card mb-3 mt-3">
           <Img
-            classname="card-img-top"
+            className="card-img-top"
             fluid={query.pavel.childImageSharp.fluid}
           />
           <div className="card-body">
@@ -62,7 +62,7 @@ export default function TeamPage() {
         </div>
         <div className="card mb-3 mt-3">
           <Img
-            classname="card-img-top"
+            className="card-img-top"
             fluid={query.vasko.childImageSharp.fluid}
           />
           <div className="card-body">
@@ -87,7 +87,7 @@ export default function TeamPage() {
       <div className="card-deck">
         <div className="card mb-3 mt-3">
           <Img
-            classname="card-img-top"
+            className="card-img-top"
             fluid={query.lyubo.childImageSharp.fluid}
           />
           <div className="card-body">
@@ -105,7 +105,7 @@ export default function TeamPage() {
         </div>
         <div className="card mb-3 mt-3">
           <Img
-            classname="card-img-top"
+            className="card-img-top"
             fluid={query.vlado.childImageSharp.fluid}
           />
           <div className="card-body">

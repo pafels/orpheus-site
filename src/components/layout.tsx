@@ -19,7 +19,7 @@ const Layout = ({
   tableOfContents,
   children,
 }: {
-  tableOfContents: any
+  tableOfContents?: any
   children: React.ReactNode
 }) => {
   const data = useStaticQuery<SiteTitleQueryQuery>(SITE_TITLE_QUERY)
