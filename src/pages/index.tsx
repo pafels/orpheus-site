@@ -1,16 +1,16 @@
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-import { IndexSliderImagesQueryQuery } from "graphql-types"
+import { IndexImagesQueryQuery } from "graphql-types"
 import React, { useState } from "react"
-import { Carousel } from "react-bootstrap"
+import { Card, Carousel, ListGroup, ListGroupItem } from "react-bootstrap"
 import { AiOutlineRise, AiOutlineSafety } from "react-icons/ai"
 import { GiMountains } from "react-icons/gi"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const INDEX_SLIDER_IMAGES_QUERY = graphql`
-  query IndexSliderImagesQuery {
-    images: allFile(filter: { relativeDirectory: { eq: "index-slider" } }) {
+const INDEX_IMAGES_QUERY = graphql`
+  query IndexImagesQuery {
+    slider: allFile(filter: { relativeDirectory: { eq: "index-slider" } }) {
       nodes {
         id
         childImageSharp {
@@ -20,13 +20,18 @@ const INDEX_SLIDER_IMAGES_QUERY = graphql`
         }
       }
     }
+    footer: file(relativePath: { eq: "index-footer.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 900) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `
 
 const IndexPage = () => {
-  const query = useStaticQuery<IndexSliderImagesQueryQuery>(
-    INDEX_SLIDER_IMAGES_QUERY
-  )
+  const query = useStaticQuery<IndexImagesQueryQuery>(INDEX_IMAGES_QUERY)
 
   const [sliderIndex, setSliderIndex] = useState(1)
 
@@ -52,7 +57,7 @@ const IndexPage = () => {
               планинско колоездене
             </h2>
           </Carousel.Caption>
-          {query.images.nodes.map(image => (
+          {query.slider.nodes.map(image => (
             <Carousel.Item key={image.id}>
               <Img fluid={image.childImageSharp!.fluid! as any} />
             </Carousel.Item>
@@ -73,7 +78,7 @@ const IndexPage = () => {
         </div>
       </div>
 
-      <div className="text-center mt-5">
+      <div className="text-center mt-5 ">
         <h4>Водещите принципи, заложени в стандарта, са:</h4>
       </div>
 
@@ -130,6 +135,44 @@ const IndexPage = () => {
           </p>
         </GuidingPrincipleCard>
       </div>
+
+      <div className="text-center mt-5">
+        <h4>Стандартът е представен в следните секции:</h4>
+        <Card>
+          <ListGroup>
+            <ListGroupItem>
+              В секция <Link to="/guide">"Правилник"</Link>
+              са описани основните понятия, маркировъчните знаци, принципите и
+              правилата, за изработка и прилагане на маркировъчен план за даден
+              район.
+            </ListGroupItem>
+            <ListGroupItem>
+              Съвети от практическото прилагане на стандарта "на терен", като
+              избор на материал и особености при поставяне на маркировъчните
+              знаци и други, ще намерите в
+              <Link to="/advices">"Полезни съвети"</Link>.
+            </ListGroupItem>
+            <ListGroupItem>
+              Маркираните по стандарта маршрути в България до момента, може да
+              разгледате в секция <Link to="/map">"Карта"</Link>.
+            </ListGroupItem>
+            <ListGroupItem>
+              Списък с организациите, заявили подкрепа за инициативата, ще
+              откриете в <Link to="/clubs">"Организации"</Link>
+            </ListGroupItem>
+            <ListGroupItem>
+              Информация за опита на организациите и авторите на проекта - в{" "}
+              <Link to="/team">"Екип"</Link>
+            </ListGroupItem>
+          </ListGroup>
+        </Card>
+      </div>
+
+      <div className="mt-5">
+        <Card>
+          <Img fluid={query.footer!.childImageSharp!.fluid! as any} />
+        </Card>
+      </div>
     </Layout>
   )
 }
@@ -146,16 +189,16 @@ function GuidingPrincipleCard({
   children: React.ReactNode
 }) {
   return (
-    <div className="card">
-      <div className="card-body">
-        <div className="card-title text-center text-success">
+    <Card>
+      <Card.Body>
+        <Card.Title className="text-center text-success">
           <h4>{title}</h4>
           <h6>{subtitle}</h6>
-        </div>
-        <div className="card-text text-center text-success">{icon}</div>
-        <div className="card-text mt-3">{children}</div>
-      </div>
-    </div>
+        </Card.Title>
+        <Card.Text className="text-center text-success">{icon}</Card.Text>
+        <Card.Text className="mt-3">{children}</Card.Text>
+      </Card.Body>
+    </Card>
   )
 }
 
