@@ -10,6 +10,14 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-catch-links`,
+    `gatsby-plugin-typescript`,
+    {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        fileName: "./ts/graphql-types.d.ts",
+      },
+    },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {

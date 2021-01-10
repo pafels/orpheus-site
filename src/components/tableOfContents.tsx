@@ -1,7 +1,17 @@
 import { Link } from "gatsby"
 import React, { useEffect, useState } from "react"
 
-export function TableOfContents({ tableOfContents }) {
+interface Item {
+  url: string
+  title: string
+  items?: Item[]
+}
+
+export function TableOfContents({
+  tableOfContents,
+}: {
+  tableOfContents: { items: Item[] }
+}) {
   const headingIds = getIds(tableOfContents.items)
 
   const [activeId, setActiveId] = useState("")
@@ -19,12 +29,12 @@ export function TableOfContents({ tableOfContents }) {
     )
 
     headingIds.forEach(id => {
-      observer.observe(document.getElementById(id))
+      observer.observe(document.getElementById(id)!)
     })
 
     return () => {
       headingIds.forEach(id => {
-        observer.unobserve(document.getElementById(id))
+        observer.unobserve(document.getElementById(id)!)
       })
     }
   }, [headingIds])
@@ -32,7 +42,15 @@ export function TableOfContents({ tableOfContents }) {
   return <NavList items={tableOfContents.items} activeId={activeId} />
 }
 
-function NavList({ items, activeId, depth = 0 }) {
+function NavList({
+  items,
+  activeId,
+  depth = 0,
+}: {
+  items: Item[]
+  activeId: string
+  depth?: number
+}) {
   const ulClass = `nav flex-column ${depth > 0 ? "pl-3" : ""}`
 
   return (
@@ -64,8 +82,8 @@ function NavList({ items, activeId, depth = 0 }) {
   )
 }
 
-function getIds(items) {
-  return items.reduce((acc, item) => {
+function getIds(items: Item[]) {
+  return items.reduce<string[]>((acc, item) => {
     if (item.url) {
       acc.push(item.url.slice(1))
     }

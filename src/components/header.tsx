@@ -1,8 +1,7 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header>
     <nav className="navbar navbar-expand navbar-light bg-light">
       <ul className="navbar-nav">
@@ -17,20 +16,12 @@ const Header = ({ siteTitle }) => (
   </header>
 )
 
-const HeaderLink = ({ title, to }) => (
+const HeaderLink = ({ title, to }: { title: string; to: string }) => (
   <li className="nav-item">
     <Link className="nav-link" activeClassName="active" to={to}>
       {title}
     </Link>
   </li>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

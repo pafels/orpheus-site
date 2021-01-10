@@ -1,23 +1,32 @@
 import { graphql, useStaticQuery } from "gatsby"
+import { SiteTitleQueryQuery } from "graphql-types"
 import React from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import Header from "./header"
 import { TableOfContents } from "./tableOfContents"
 
-const Layout = ({ tableOfContents, children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
+const SITE_TITLE_QUERY = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        title
       }
     }
-  `)
+  }
+`
+
+const Layout = ({
+  tableOfContents,
+  children,
+}: {
+  tableOfContents: any
+  children: React.ReactNode
+}) => {
+  const data = useStaticQuery<SiteTitleQueryQuery>(SITE_TITLE_QUERY)
 
   return (
     <div className="d-flex flex-column" style={{ minHeight: "100vh" }}>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header />
       {tableOfContents ? (
         <main>
           <Container>
