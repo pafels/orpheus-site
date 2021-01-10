@@ -3,8 +3,7 @@ import Img from "gatsby-image"
 import { IndexImagesQueryQuery } from "graphql-types"
 import React, { useState } from "react"
 import { Card, Carousel, ListGroup, ListGroupItem } from "react-bootstrap"
-import { AiOutlineRise, AiOutlineSafety } from "react-icons/ai"
-import { GiMountains } from "react-icons/gi"
+import { GiMountains, GiSafetyPin, GiUpgrade } from "react-icons/gi"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -87,7 +86,7 @@ const IndexPage = () => {
           title="Безопасност"
           subtitle="на практикуващите планинско колоездене и други ползватели на
                 планините"
-          icon={<AiOutlineSafety size={100} />}
+          icon={<GiSafetyPin size={100} />}
         >
           <p>
             В последното десетилетие се наблюдава неколкократно увеличаване на
@@ -119,7 +118,7 @@ const IndexPage = () => {
         <GuidingPrincipleCard
           title="Развитие"
           subtitle="на планинските райони, нестопанските организации и туристическите продукти"
-          icon={<AiOutlineRise size={100} />}
+          icon={<GiUpgrade size={100} />}
         >
           <p>
             С разнообразния си характер и красота, съчетана с богат фонд
