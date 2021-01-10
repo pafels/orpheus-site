@@ -1,12 +1,6 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
+import { Col, Container, Row } from "react-bootstrap"
 import Header from "./header"
 import { TableOfContents } from "./tableOfContents"
 
@@ -26,30 +20,30 @@ const Layout = ({ tableOfContents, children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       {tableOfContents ? (
         <main>
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-8">{children}</div>
-              <div className="col-lg-4 d-none d-sm-none d-md-none d-lg-block">
+          <Container>
+            <Row>
+              <Col lg={8}>{children}</Col>
+              <Col lg={4} className="d-none d-sm-none d-md-none d-lg-block">
                 <div className="sticky-top orph-toc">
                   <TableOfContents tableOfContents={tableOfContents} />
                 </div>
-              </div>
-            </div>
-          </div>
+              </Col>
+            </Row>
+          </Container>
         </main>
       ) : (
         <main>
-          <div className="container">{children}</div>
+          <Container>{children}</Container>
         </main>
       )}
       <footer className="footer mt-auto py-3">
-        <div className="container">
+        <Container>
           <span className="text-muted">
             © {new Date().getFullYear()}, Built with
             {` `}
             <a href="https://www.gatsbyjs.com">Gatsby</a>
           </span>
-        </div>
+        </Container>
       </footer>
     </div>
   )
