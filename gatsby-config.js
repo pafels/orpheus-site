@@ -7,6 +7,9 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -36,9 +39,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
