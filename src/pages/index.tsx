@@ -34,41 +34,43 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Начало" />
 
-      <Carousel
-        activeIndex={sliderIndex}
-        onSelect={onSlideAdvanced}
-        controls={false}
-        indicators={false}
-        keyboard={false}
-      >
-        <Carousel.Caption>
-          <h2>Ръководството</h2>
-        </Carousel.Caption>
-        {query.images.nodes.map(image => (
-          <Carousel.Item key={image.id}>
-            <Img fluid={image.childImageSharp!.fluid! as any} />
-          </Carousel.Item>
-        ))}
-      </Carousel>
-      <div>
-        <h1>За Ръководството</h1>
-        <div className="mt-3">
-          Nulla faucibus facilisis egestas. Vestibulum in porttitor enim.
-          Integer eu condimentum libero. Nunc commodo neque lectus, et vulputate
-          ipsum euismod pretium. Etiam dignissim ante at diam tincidunt, sed
-          commodo magna placerat. Nam volutpat lectus et diam vehicula pretium
-          nec quis sem. Cras tempor porta dui in ultrices.
-        </div>
-      </div>
       <div className="mt-5">
-        <h2>Цели</h2>
-        <ul>
-          <li>...</li>
-          <li>...</li>
-          <li>...</li>
-        </ul>
+        <Carousel
+          activeIndex={sliderIndex}
+          onSelect={onSlideAdvanced}
+          controls={false}
+          indicators={false}
+          keyboard={false}
+        >
+          <Carousel.Caption>
+            <h2>
+              Ръководство и единен стандарт за маркиране на маршрути за
+              планинско колоездене
+            </h2>
+          </Carousel.Caption>
+          {query.images.nodes.map(image => (
+            <Carousel.Item key={image.id}>
+              <Img fluid={image.childImageSharp!.fluid! as any} />
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </div>
+
+      <div>
+        <h1>За проекта</h1>
+        <div className="mt-3">
+          <p>
+            Създаването и популяризирането на единен стандарт за маркиране на
+            маршрути за планинско колоездене в България, е инициатива на четири
+            български организации с дългогодишен опит в планинското колездене.
+          </p>
+          <p>
+            Проектът има за цел да предложи и утвърди консистентен и гъвкав
+            стандарт за маркиране, с оглед на следните принципи:
+          </p>
+        </div>
       </div>
     </Layout>
   )
