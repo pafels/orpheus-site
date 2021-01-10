@@ -21,8 +21,7 @@ const GuidePage = () => {
 
   return (
     <Layout tableOfContents={query!.mdx!.tableOfContents}>
-      <SEO title="Ръководство" />
-      <h1>Ръководство за маркиране на маршрути за планинско колоездене</h1>
+      <SEO title="Правилник" />
       <div className="guide">
         <MDXRenderer>{query!.mdx!.body}</MDXRenderer>
       </div>
