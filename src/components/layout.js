@@ -6,7 +6,6 @@
  */
 
 import { graphql, useStaticQuery } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import Header from "./header"
 import { TableOfContents } from "./tableOfContents"
@@ -31,7 +30,7 @@ const Layout = ({ tableOfContents, children }) => {
             <div className="row">
               <div className="col-lg-8">{children}</div>
               <div className="col-lg-4 d-none d-sm-none d-md-none d-lg-block">
-                <div className="sticky-top toc">
+                <div className="sticky-top orph-toc">
                   <TableOfContents tableOfContents={tableOfContents} />
                 </div>
               </div>
@@ -54,10 +53,6 @@ const Layout = ({ tableOfContents, children }) => {
       </footer>
     </div>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
