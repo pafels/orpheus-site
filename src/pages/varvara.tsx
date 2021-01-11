@@ -13,14 +13,14 @@ const VARVARA_QUERY = graphql`
   }
 `
 
-const VarvaraPage = () => {
+const VarvaraPage = (props: any) => {
   // TODO: Fix the type
   const query = useStaticQuery<GuideQueryQuery>(VARVARA_QUERY)
 
   if (!query) return <div>Not found!</div>
 
   return (
-    <Layout>
+    <Layout location={props.location.pathname}>
       <SEO title="Варвара" />
       <div className="guide">
         <MDXRenderer>{query!.mdx!.body}</MDXRenderer>

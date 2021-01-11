@@ -2,8 +2,7 @@ import { Link } from "gatsby"
 import React from "react"
 import { Nav, Navbar, NavDropdown } from "react-bootstrap"
 
-const Header = () => {
-  console.log(window.location.href.includes("varvara"))
+const Header = ({ location }: { location?: string }) => {
   return (
     <header>
       <Nav className="bg-light">
@@ -15,7 +14,7 @@ const Header = () => {
             <NavDropdown
               id="examples"
               title="Примери"
-              active={window.location.href.includes("varvara")}
+              active={location?.includes("varvara")}
             >
               <NavDropdown.Item>
                 <Link

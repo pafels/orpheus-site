@@ -17,16 +17,18 @@ const SITE_TITLE_QUERY = graphql`
 
 const Layout = ({
   tableOfContents,
+  location,
   children,
 }: {
   tableOfContents?: any
+  location?: any
   children: React.ReactNode
 }) => {
   const data = useStaticQuery<SiteTitleQueryQuery>(SITE_TITLE_QUERY)
 
   return (
     <div className="d-flex flex-column" style={{ minHeight: "100vh" }}>
-      <Header />
+      <Header location={location} />
       {tableOfContents ? (
         <main>
           <Container>
