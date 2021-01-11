@@ -30,6 +30,7 @@ const Header = () => {
             <HeaderLink title="Карта" to="/map" />
             <HeaderLink title="Организации" to="/clubs" />
             <HeaderLink title="Екип" to="/team" />
+            <HeaderLink title="Контакти" to="/contacts" />
           </ul>
         </Navbar>
       </Nav>
