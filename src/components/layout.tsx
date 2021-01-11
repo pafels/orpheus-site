@@ -45,7 +45,7 @@ const Layout = ({
           <Container>{children}</Container>
         </main>
       )}
-      <footer className="footer mt-auto py-3">
+      <footer className="footer text-center mt-auto py-3">
         <Container>
           <span className="text-muted">
             © {new Date().getFullYear()}, Built with
