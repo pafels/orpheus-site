@@ -17,7 +17,6 @@ const AdvicesPage = () => {
   return (
     <Layout tableOfContents={query.mdx.tableOfContents}>
       <SEO title="Полезни съвети" />
-      <h1>Полезни съвети</h1>
       <div className="guide">
         <MDXRenderer>{query.mdx.body}</MDXRenderer>
       </div>

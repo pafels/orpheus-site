@@ -152,6 +152,10 @@ const IndexPage = () => {
               <Link to="/advices">"Полезни съвети"</Link>.
             </ListGroupItem>
             <ListGroupItem>
+              Примери за логиката при формиране на маркировъчни планове може да
+              разгледате за <Link to="/varvara">Байк Център Варвара</Link>.
+            </ListGroupItem>
+            <ListGroupItem>
               Маркираните по стандарта маршрути в България до момента, може да
               разгледате в секция <Link to="/map">"Карта"</Link>.
             </ListGroupItem>
