@@ -50,7 +50,7 @@ const IndexPage = () => {
           indicators={false}
           keyboard={false}
         >
-          <Carousel.Caption>
+          <Carousel.Caption className="orph-carousel-caption">
             <h2>
               Ръководство и единен стандарт за маркиране на маршрути за
               планинско колоездене

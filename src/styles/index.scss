@@ -3,6 +3,22 @@
 
 
 .orph-slider {
+  .orph-carousel-caption {
+    bottom: -10px;
+
+    @include media-breakpoint-up(sm) {
+      bottom: 0px
+    }
+
+    @include media-breakpoint-up(md) {
+      bottom: 10px
+    }
+
+    @include media-breakpoint-up(lg) {
+      bottom: 20px
+    }
+  }
+
   h2 {
     text-shadow: 0rem 0rem 1rem black;
 
