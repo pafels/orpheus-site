@@ -14,7 +14,7 @@ const ContactsPage = () => {
         <p>Нуждаете се от консултация?</p>
         <p>Желате да подкрепите проекта?</p>
         <p>Искате да дадете обратна връзка?</p>
-        <form name="contact-form" data-netlify="true">
+        <form name="contact-form" data-netlify="true" method="POST">
           <div className="form-group">
             <label htmlFor="name">Вашите имена</label>
             <input type="text" name="name" id="name" className="form-control" />
