@@ -42,7 +42,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Начало" />
 
-      <div className="mt-5">
+      <div className="mt-5 orph-slider">
         <Carousel
           activeIndex={sliderIndex}
           onSelect={onSlideAdvanced}
