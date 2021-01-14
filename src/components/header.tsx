@@ -18,7 +18,7 @@ const Header = ({ location }: { location?: string }) => {
                 title="Примери"
                 active={location?.includes("varvara")}
               >
-                <NavDropdown.Item>
+                <NavDropdown.Item as="div">
                   <Link
                     className="nav-link"
                     activeClassName="active"
