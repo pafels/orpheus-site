@@ -35,6 +35,27 @@ export default function TeamPage() {
           }
         }
       }
+      trynskotd: file(relativePath: { eq: "orgs/trynskotd.png" }) {
+        childImageSharp {
+          fixed(width: 250) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      bikeventures: file(relativePath: { eq: "orgs/bikeventures.png" }) {
+        childImageSharp {
+          fixed(width: 250) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      shturkur: file(relativePath: { eq: "orgs/shturkur.png" }) {
+        childImageSharp {
+          fixed(width: 250) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
       vratsa: file(relativePath: { eq: "orgs/vratsa.jpg" }) {
         childImageSharp {
           fixed(width: 250) {
@@ -73,15 +94,21 @@ export default function TeamPage() {
           title="Сдружение Байкария"
           image={query.bikearea.childImageSharp.fixed}
         >
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+        </ClubCard>
+        <ClubCard
+          title=""
+          image={query.bikeventures.childImageSharp.fixed}
+        >
+        </ClubCard>
+        <ClubCard
+          title=""
+          image={query.trynskotd.childImageSharp.fixed}
+        >
+        </ClubCard>
+        <ClubCard
+          title=""
+          image={query.shturkur.childImageSharp.fixed}
+        >
         </ClubCard>
         <ClubCard title="МТБ-БГ" image={query.mtbBg.childImageSharp.fixed}>
           <p>
