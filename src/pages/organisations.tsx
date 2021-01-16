@@ -59,7 +59,7 @@ export default function OrgsPage() {
                   <div className="col-lg-3">
                     <div>
                       {url ? (
-                        <a href={url} target="blank" rel="noreferrer">
+                        <a href={url} target="_blank" rel="noreferrer">
                           <Img
                             fixed={logo.childImageSharp?.fixed as any}
                             key={logo.id}
