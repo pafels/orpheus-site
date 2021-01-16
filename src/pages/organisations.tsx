@@ -37,6 +37,8 @@ const URLS = {
   vratsa: "http://vratsatrails.com",
   bikeventures: "https://bike-ventures.com",
   bluerock: "https://www.facebook.com/BLUEROCKMTB",
+  alabak: "https://www.facebook.com/alabak.info",
+  trynskotd: "https://www.facebook.com/tourismtransko",
 }
 
 export default function OrgsPage() {
