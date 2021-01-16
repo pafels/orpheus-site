@@ -27,6 +27,15 @@ const Header = ({ location }: { location?: string }) => {
                     Варвара
                   </Link>
                 </NavDropdown.Item>
+                <NavDropdown.Item as="div">
+                  <Link
+                    className="nav-link"
+                    activeClassName="active"
+                    to="/velingrad"
+                  >
+                    Велинград
+                  </Link>
+                </NavDropdown.Item>
               </NavDropdown>
               <HeaderLink title="Карта" to="/map" />
               <HeaderLink title="Организации" to="/organisations" />

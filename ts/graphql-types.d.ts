@@ -3990,3 +3990,14 @@ export type VarvaraQueryQuery = (
     & Pick<Mdx, 'body'>
   )> }
 );
+
+export type VelingradQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type VelingradQueryQuery = (
+  { __typename?: 'Query' }
+  & { mdx?: Maybe<(
+    { __typename?: 'Mdx' }
+    & Pick<Mdx, 'body'>
+  )> }
+);
