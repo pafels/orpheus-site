@@ -155,6 +155,15 @@ export default function TeamPage() {
           </div>
         </div>
       </div>
+      <div className="card text-center">
+        <div className="card-body">
+          <h6>
+            В изработката, консултирането и финализирането на правилника също
+            така се включиха и много колеги от различни клубове и организации в
+            страната - за което им благодарим!
+          </h6>
+        </div>
+      </div>
     </Layout>
   )
 }
