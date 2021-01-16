@@ -35,10 +35,13 @@ const ContactsPage = () => {
           <form
             name="contact-form"
             data-netlify="true"
+            data-netlify-recaptcha="true"
+            netlify-honeypot="bot-field"
             method="POST"
             action="/thank-you"
           >
             <input type="hidden" name="form-name" value="contact-form" />
+            <input name="bot-field" hidden />
             <div className="form-group">
               <label htmlFor="name">Вашите имена</label>
               <input
@@ -75,6 +78,7 @@ const ContactsPage = () => {
                 rows={10}
               />
             </div>
+            <div data-netlify-recaptcha="true"></div>
             <button type="submit" className="btn btn-primary">
               Изпрати
             </button>
