@@ -3863,6 +3863,23 @@ export type SiteMetadataQueryQuery = (
   )> }
 );
 
+export type ContactsImagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type ContactsImagesQueryQuery = (
+  { __typename?: 'Query' }
+  & { file?: Maybe<(
+    { __typename?: 'File' }
+    & { childImageSharp?: Maybe<(
+      { __typename?: 'ImageSharp' }
+      & { fluid?: Maybe<(
+        { __typename?: 'ImageSharpFluid' }
+        & GatsbyImageSharpFluidFragment
+      )> }
+    )> }
+  )> }
+);
+
 export type GuideQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3944,6 +3961,23 @@ export type TeamQueryQuery = (
       )> }
     )> }
   ) }
+);
+
+export type ThankYouImagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type ThankYouImagesQueryQuery = (
+  { __typename?: 'Query' }
+  & { file?: Maybe<(
+    { __typename?: 'File' }
+    & { childImageSharp?: Maybe<(
+      { __typename?: 'ImageSharp' }
+      & { fluid?: Maybe<(
+        { __typename?: 'ImageSharpFluid' }
+        & GatsbyImageSharpFluidFragment
+      )> }
+    )> }
+  )> }
 );
 
 export type VarvaraQueryQueryVariables = Exact<{ [key: string]: never; }>;
