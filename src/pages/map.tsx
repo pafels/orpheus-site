@@ -9,7 +9,7 @@ const MapPage = () => (
     <div className="embed-responsive embed-responsive-1by1">
       <iframe
         title="map"
-        src="https://www.google.com/maps/d/u/0/embed?mid=1N4eyP8qLkS3S-FI2UtY2lT6gJ-zPU_7a"
+        src="https://www.google.com/maps/d/embed?mid=1zp_1a2HLBEf4s_bPPf5-jq0IHMGw4LHg"
       ></iframe>
     </div>
   </Layout>
