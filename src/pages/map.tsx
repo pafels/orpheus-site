@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 const MapPage = () => (
   <Layout>
     <SEO title="Карта" />
-    <h2>Карта на маркирани отсечки и маршрути в България</h2>
+    <h1>Карта на маркирани отсечки и маршрути в България</h1>
     <div className="embed-responsive embed-responsive-1by1">
       <iframe
         title="map"
