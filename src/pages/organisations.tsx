@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import { PartnerLogosQueryQuery } from "graphql-types"
 import _ from "lodash"
@@ -48,6 +48,10 @@ export default function OrgsPage() {
     <Layout>
       <SEO title="Организации" />
       <h1>Организации, подкрепящи инициативата</h1>
+      <h6 className="text-muted">
+        Ако желате да заявите подкрепа на проекта с логото на вашата
+        организация, <Link to="/contacts">пишете ни!</Link>
+      </h6>
       <div className="">
         {_.chunk(query.allFile.nodes, 4).map(logos => {
           return (
