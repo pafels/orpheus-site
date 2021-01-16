@@ -12,10 +12,8 @@
     "@types/graphql": "^14.5.0",
     "@types/node": "^14.14.20",
     "@types/react": "^17.0.0",
-    "@types/react-bootstrap": "^0.32.25",
     "@types/react-dom": "^17.0.0",
     "@types/react-helmet": "^6.1.0",
-    "@types/vfile-message": "^2.0.0",
     "bootstrap": "^4.5.3",
     "chalk": "^4.1.0",
     "eslint": "^7.17.0",
@@ -77,5 +75,8 @@
   },
   "bugs": {
     "url": "https://github.com/bikezilla/orpheus-site/issues"
+  },
+  "resolutions": {
+    "remark": "11.0.2"
   }
 }
