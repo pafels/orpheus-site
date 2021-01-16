@@ -10,7 +10,7 @@ const PARTNER_LOGOS_QUERY = graphql`
   query PartnerLogosQuery {
     allFile(
       filter: { relativeDirectory: { eq: "orgs" } }
-      sort: { fields: birthTime }
+      sort: { fields: name }
     ) {
       nodes {
         id
