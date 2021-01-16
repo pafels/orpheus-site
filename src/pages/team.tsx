@@ -50,13 +50,12 @@ export default function TeamPage() {
           <div className="card-body">
             <h5>Павел Сидеров / Сдружение "Алабак"</h5>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Занимава се с поддръжка, развитие и популяризиране на велозоната около село Варвара от 2010та година насам. 
+            През 2015 година стартира инициативата Алабак, чиито цели са свързани също и с туристическата инфраструктура 
+            и опазване на едноименния родопски дял. С помощта на много съмишленици организира множество доброволчески 
+            акции и събития за популяризиране. В следствие на всички тези дейности през годините се сблъсква с множество 
+            проблеми, което е и причината да отделя не малко време за разработване на правилника за веломаршрути и също 
+            така комуникация с институциите за опазване на вело и туристическата инфраструктура.
             </p>
           </div>
         </div>

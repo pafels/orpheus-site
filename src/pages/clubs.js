@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 export default function TeamPage() {
   const query = useStaticQuery(graphql`
     query {
-      alabak: file(relativePath: { eq: "orgs/alabak.jpg" }) {
+      alabak: file(relativePath: { eq: "orgs/alabak.png" }) {
         childImageSharp {
           fixed(width: 250) {
             ...GatsbyImageSharpFixed
@@ -65,18 +65,9 @@ export default function TeamPage() {
           </p>
         </ClubCard>
         <ClubCard
-          title="Сдружение Алабак"
+          title=""
           image={query.alabak.childImageSharp.fixed}
         >
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
         </ClubCard>
         <ClubCard
           title="Сдружение Байкария"
