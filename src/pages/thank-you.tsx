@@ -23,12 +23,12 @@ const ThankYouPage = () => {
     <Layout>
       <SEO title="Контакти" />
 
-      <div className="row mt-5">
-        <div className="col-6 mt-2">
+      <div className="row-md mt-5">
+        <div className="col-md-6 mt-2">
           <h3>Благодарим за съобщението!</h3>
           <h6>Ще се свържем с вас при първа възможност.</h6>
         </div>
-        <div className="col-6 mt-2">
+        <div className="col-md-6 mt-2">
           <Img fluid={query.file!.childImageSharp!.fluid as any} />
         </div>
       </div>

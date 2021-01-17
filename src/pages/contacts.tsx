@@ -23,8 +23,8 @@ const ContactsPage = () => {
     <Layout>
       <SEO title="Контакти" />
 
-      <div className="row mt-5">
-        <div className="col-6 mt-2">
+      <div className="row-md mt-5">
+        <div className="col-md-6 mt-2">
           <h1>Свържeте се с нас!</h1>
           <ul>
             <li>Нуждаете се от консултация?</li>
@@ -82,7 +82,7 @@ const ContactsPage = () => {
             </button>
           </form>
         </div>
-        <div className="col-6 mt-2">
+        <div className="col-md-6 mt-2">
           <Img fluid={query.file!.childImageSharp!.fluid as any} />
         </div>
       </div>
