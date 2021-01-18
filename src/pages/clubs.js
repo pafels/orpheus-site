@@ -49,6 +49,13 @@ export default function TeamPage() {
           }
         }
       }
+      endurowarriors: file(relativePath: { eq: "orgs/endurowarriors.png" }) {
+        childImageSharp {
+          fixed(width: 250) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
       shturkur: file(relativePath: { eq: "orgs/shturkur.png" }) {
         childImageSharp {
           fixed(width: 250) {
