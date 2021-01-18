@@ -42,7 +42,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Начало" />
 
-      <div className="mt-5">
+      <div className="mt-5 orph-slider">
         <Carousel
           activeIndex={sliderIndex}
           onSelect={onSlideAdvanced}
@@ -50,7 +50,7 @@ const IndexPage = () => {
           indicators={false}
           keyboard={false}
         >
-          <Carousel.Caption>
+          <Carousel.Caption className="orph-carousel-caption">
             <h2>
               Ръководство и единен стандарт за маркиране на маршрути за
               планинско колоездене
@@ -153,7 +153,8 @@ const IndexPage = () => {
             </ListGroupItem>
             <ListGroupItem>
               Примери за логиката при формиране на маркировъчни планове може да
-              разгледате за <Link to="/varvara">Байк Център Варвара</Link>.
+              разгледате за <Link to="/varvara">Байк Център Варвара</Link> и{" "}
+              <Link to="/velingrad">Байк Център Велинград</Link>.
             </ListGroupItem>
             <ListGroupItem>
               Маркираните по стандарта маршрути в България до момента, може да

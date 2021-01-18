@@ -1,130 +1,204 @@
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import { TeamQueryQuery } from "graphql-types"
+import _ from "lodash"
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-export default function TeamPage() {
-  const query = useStaticQuery(graphql`
-    query {
-      pavel: file(relativePath: { eq: "team/pavel.jpg" }) {
+const TEAM_QUERY = graphql`
+  query TeamQuery {
+    allFile(filter: { relativeDirectory: { eq: "team" } }) {
+      nodes {
+        name
         childImageSharp {
-          fluid(maxWidth: 540) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      vasko: file(relativePath: { eq: "team/vasko.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 540) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      lyubo: file(relativePath: { eq: "team/lyubo.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 540) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      vlado: file(relativePath: { eq: "team/vlado.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 540) {
+          fluid(maxWidth: 540, maxHeight: 350) {
             ...GatsbyImageSharpFluid
           }
         }
       }
     }
-  `)
+  }
+`
+
+export default function TeamPage() {
+  const query = useStaticQuery<TeamQueryQuery>(TEAM_QUERY)
+  const [lyubo, pavel, vasko, vlado] = _.sortBy(
+    query.allFile.nodes,
+    node => node.name
+  ).map(node => node.childImageSharp!.fluid)
 
   return (
     <Layout>
       <SEO title="Екип" />
       <div className="card-deck">
         <div className="card mb-3 mt-3">
-          <Img
-            className="card-img-top"
-            fluid={query.pavel.childImageSharp.fluid}
-          />
+          <Img className="card-img-top" fluid={vasko as any} />
           <div className="card-body">
-            <h5>Павел Сидеров / Сдружение "Алабак"</h5>
+            <div className="card-title">
+              <h5>Васил Тодев / Сдружение "Байкария"</h5>
+            </div>
             <p>
+              <a href="https://www.bikearea.org" target="_blank">
+                Сдружение “Байкария”
+              </a>{" "}
+              е създадено през 2004 година с цел развитие и популяризиране на
+              планинското колоездене в България. Сдружението работи по
+              създаването на десетки маршрути за планинско колоездене в
+              Родопите. Сред тях са маршрути в района на Велинград, Беглика,
+              Триград, Момчиловци, Маджарово и Ивайловград. "Байкария" стои и
+              зад създаването на маршрута “Рудопия”, прекосяващ Родопите от
+              запад на изток (Велинград - Мезек), както и велокоридор “Баташка
+              планина”, свързващ Защитените територии в едноименния дял на
+              Западни Родопи.
+            </p>
+            <p>
+              През 2008 година сдружението участва в първия опит за създаване на
+              стандарт за маркиране на велосипедни маршрути, в резултат на който
+              е издадена кратка брошура-наръчник за обособяване на “байк
+              дестинация” и указания за полагане на маркировка. Успоредно с
+              изброените дейности, от 2004 година до сега, сдружение “Байкария”
+              е организирало над 70 велосипедни събития в Българските планини и
+              чужбина.
+            </p>
+            <p>
+<<<<<<< HEAD
             Занимава се с поддръжка, развитие и популяризиране на велозоната около село Варвара от 2010та година насам. 
             През 2015 година стартира инициативата Алабак, чиито цели са свързани също и с туристическата инфраструктура 
             и опазване на едноименния родопски дял. С помощта на много съмишленици организира множество доброволчески 
             акции и събития за популяризиране. В следствие на всички тези дейности през годините се сблъсква с множество 
             проблеми, което е и причината да отделя не малко време за разработване на правилника за веломаршрути и също 
             така комуникация с институциите за опазване на вело и туристическата инфраструктура.
+=======
+              Васко, един от основателите на сдружението, работи за постигане
+              целите на организацията от нейното създаване до настоящия момент.
+              Участва активно във всички проекти на сдружението, в това число
+              развитието на горски център “Чатъма”, провеждането на организирани
+              вело и пешеходни прояви, реализацията на редица природоопазващи
+              инициативи и проекти за местно развитие. Родом от Велингард,
+              обиколил редица планини по целия свят, Васко винаги носи Родопите
+              в сърцето си.
+>>>>>>> 598949572d91023a121f31f34a6feacba25a2969
             </p>
           </div>
         </div>
         <div className="card mb-3 mt-3">
-          <Img
-            className="card-img-top"
-            fluid={query.vasko.childImageSharp.fluid}
-          />
+          <Img className="card-img-top" fluid={lyubo as any} />
           <div className="card-body">
-            <h5>Васил Тодев / Сдружение "Байкария"</h5>
+            <h5>Любомир Ботушаров / MTB-BG.com</h5>
             <p>
-              Etiam tellus nisl, pretium in elementum hendrerit, cursus non
-              purus. Sed in lectus consectetur, viverra purus nec, tincidunt
-              lorem. Duis lobortis lacus et faucibus imperdiet. Vivamus ultrices
-              id massa at laoreet. Quisque lectus tellus, hendrerit ut tempus
-              sit amet, interdum sit amet metus. Donec ac nisi tincidunt,
-              egestas lectus sed, condimentum nisl. Curabitur convallis libero
-              ut diam finibus laoreet. Maecenas auctor enim ut sem viverra
-              maximus at vestibulum nibh. Interdum et malesuada fames ac ante
-              ipsum primis in faucibus. Nunc id lorem egestas turpis condimentum
-              cursus nec vel dolor. Integer semper lectus lectus, a egestas
-              purus lacinia rutrum. Aenean fringilla lobortis mi, eu placerat
-              mauris.
+              Любомир Ботушаров се занимава активно с планинско колоездене от
+              1997 г., като през повечето време го практикува и като професия.
+            </p>
+            <p>
+              Той е собственик и основен автор в блога{" "}
+              <a href="https://www.mtb-bg.com" target="_blank">
+                MTB-BG.com
+              </a>
+              , който е създаден през 2001 г. и оттогава е един от
+              най-популярните източници на информация на тази тема, включително
+              за МТБ маршрути и пътеки. През 2019 г. като допълнение към блога
+              бе създаден и допълнителен сайт, наречен{" "}
+              <a href="https://info.mtb-bg.com" target="_blank">
+                МТБ Справочник
+              </a>
+              , който събира на едно място всякаква полезна информация за
+              каращите - GPS следи за маршрути и отсечки, видеоклипове от тях,
+              информация за велоклубове, места за настаняване и хранене,
+              веломагазини и сервизи и др.
+            </p>
+            <p>
+              В последните години Любо развива успешно и Велоучилище МТБ-БГ,
+              чрез което организира обучителни курсове по планинско колоездене
+              за начинаещи, напредващи и напреднали. В тях всеки може да научи
+              повече за основните техники при каране на планински велосипед и да
+              усъвършенства уменията си.
+            </p>
+            <p>
+              През всички тези години както чрез блога си (като медия), така и в
+              лично качество, Любо е участвал в многобройни инициативи, целящи
+              защита на общи интереси, работа с държавните институции,
+              изработване на общи правила и стандарти, благотворителни и
+              доброволчески кампании и други координирани действия между
+              различни велоклубове и части на МТБ общността. Когато е с
+              колелото, ще го познаете по широката усмивка - вероятно защото
+              наистина обича това, което прави.
             </p>
           </div>
         </div>
       </div>
       <div className="card-deck">
         <div className="card mb-3 mt-3">
-          <Img
-            className="card-img-top"
-            fluid={query.lyubo.childImageSharp.fluid}
-          />
+          <Img className="card-img-top" fluid={vlado as any} />
           <div className="card-body">
-            <h5>Любомир Ботушаров / "МТБ-БГ"</h5>
+            <h5> Владимир Конушлиев / Велоклуб "Крива спица"</h5>
             <p>
-              Fusce ac pulvinar enim, sit amet facilisis dolor. Cras viverra mi
-              quis nisl consectetur rutrum non at erat. Sed ac lorem tincidunt,
-              pretium nisi ac, egestas nisi. Mauris iaculis viverra elit vel
-              aliquet. In a nunc mattis, rhoncus lorem at, maximus ligula.
-              Phasellus suscipit est quis lacus dictum, eget laoreet est
-              sollicitudin. Nulla efficitur leo quis turpis volutpat, eu rutrum
-              nisl hendrerit. Sed finibus pretium est quis egestas.
+              <a href="https://www.kriva.org" target="_blank">
+                Велоклуб "Крива спица"
+              </a>{" "}
+              е един от първите клубове по планинско колоездене в България.
+              Корените на клуба поникват в Пловдив през пролетта на 2004-та
+              година. Оттогава до днес, "кривите спици" имат зад гърба си почти
+              трицифрено число организирани вело походи и събития в българските
+              планини. Клубът е организатор на традиционния и емблематичен "24
+              часов маратон по планинско колоездене" вече 14 години.
+            </p>
+            <p>
+              Сдружението има богат опит във разработка и поддръжка на маршрути
+              за планинско колоездене, предимно в Източни и Западни Родопи.
+              Редом с това, клубът създава и поддържа до ден днешен първия, и
+              най-голям до момента, парк за планинско колоездене в градска среда
+              - "Велопарк Пловдив".
+            </p>
+            <p>
+              Велоклуб "Крива спица" участва редовно в разговори с институции на
+              местно и национално ниво, касаещи регулиране и развитие на
+              велосипедния туризъм в планините.
+            </p>
+            <p>
+              Владо е един от основателите на клуба и неуморен деятел във всички
+              дела на сдружението. Скита из българските планини, с колело и
+              пеша, вече 17 години.
             </p>
           </div>
         </div>
         <div className="card mb-3 mt-3">
-          <Img
-            className="card-img-top"
-            fluid={query.vlado.childImageSharp.fluid}
-          />
+          <Img className="card-img-top" fluid={pavel as any} />
           <div className="card-body">
-            <h5>Владимир Конушлиев / Велоклуб "Крива Спица"</h5>
+            <h5>Павел Сидеров / Сдружение "Алабак"</h5>
             <p>
-              Cras tellus libero, tempor vel euismod id, consectetur id orci.
-              Integer non ultrices turpis, a tincidunt lectus. Curabitur est
-              ipsum, posuere molestie tristique ac, iaculis quis ex. Sed
-              porttitor nunc in dui interdum viverra. Maecenas ullamcorper, quam
-              id porta consequat, sapien elit laoreet sapien, sit amet venenatis
-              justo leo vel lacus. Vivamus finibus, orci eget molestie egestas,
-              purus massa tincidunt nibh, sed consequat urna nunc at dui.
-              Maecenas bibendum, arcu a tincidunt condimentum, dui lorem
-              facilisis mi, eu scelerisque nisl augue et ipsum. Donec at
-              vestibulum lacus. Proin et lobortis velit. Aenean non vestibulum
-              diam, vitae rhoncus nisl. Integer imperdiet enim non elit
-              ultricies posuere. Proin nulla lacus, cursus sed leo a,
-              condimentum varius sapien.
+              <a href="https://www.facebook.com/alabak.info" target="_blank">
+                "Инициатива Алабак"
+              </a>{" "}
+              е кръстена на едноименния планински рид в Западните Родопи
+              разположен между долините на реките Яденица и Чепинска.
+              Инициативата цели опазването на уникалните природни дадености на
+              дела редом с устойчиво развитие на туризъм по богатата му
+              маршрутна мрежа.
+            </p>
+            <p>
+              Павел е планинар и колоездач с над 12 години опит. Грижовен
+              домакин на велозоната около село Варвара, която развива и поддържа
+              от 2010-та година насам, дейностите около която прерастват в
+              "Инициатива Алабак" през 2015-та година. С помощта на много
+              съмишленици организира множество доброволчески акции и събития за
+              популяризиране на природното богатство на това парченце от
+              Родопите. В следствие на всички тези дейности през годините се
+              сблъсква с множество проблеми, което е и причината да отделя не
+              малко време за разработване на правилника за веломаршрути и също
+              така комуникация с институциите за опазване на велосипедна и
+              пешеходна туристическата инфраструктура.
             </p>
           </div>
+        </div>
+      </div>
+      <div className="card text-center">
+        <div className="card-body">
+          <h6>
+            В изработката, консултирането и финализирането на правилника също
+            така се включиха и много колеги от различни клубове и организации в
+            страната - за което им благодарим!
+          </h6>
         </div>
       </div>
     </Layout>
